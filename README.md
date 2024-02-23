@@ -1,47 +1,30 @@
-# WebCrawlers
-WebCrawlers for UFC fighter Stats
+# React + TypeScript + Vite
 
-# UFC Fighters Data Project
-<img width="1350" alt="1bd6bb84cd7c69951875aca4995715ef" src="https://github.com/StevenReynoso/WebCrawlers/assets/114453891/070c3701-6cd5-4060-ba81-de7a7de330e6">
-<img width="1354" alt="3292877be6729c2545574602643ce8e4" src="https://github.com/StevenReynoso/WebCrawlers/assets/114453891/8f92b2d8-c680-4cc8-adb0-46e243075249">
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
+Currently, two official plugins are available:
 
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Overview
+## Expanding the ESLint configuration
 
-This project focuses on gathering and analyzing data related to UFC fighters. It includes a web scraping script to collect fighter statistics from the official UFC website and processes the data for further analysis.
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-## Features
+- Configure the top-level `parserOptions` property like this:
 
-- Web scraping UFC fighter data.
-- Cleaning and structuring the data.
-- Analysis of fighter statistics.
-- Visualization of data trends.
-- Integration with Power BI for in-depth analysis and visualization.
+```js
+export default {
+  // other rules...
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: ['./tsconfig.json', './tsconfig.node.json'],
+    tsconfigRootDir: __dirname,
+  },
+}
+```
 
-## Getting Started
-
-### Prerequisites
-
-- Python 3.x
-- Required Python packages (install using `pip install -r requirements.txt`)
-- Jupyter Notebook (for exploratory data analysis)
-
-## Project Structure
-
-- `main_script.py`: Main script to initiate data gathering and processing.
-- `data/`: Directory to store the collected data.
-- `analysis/`: Directory containing Jupyter Notebooks for exploratory data analysis.
-- `visualizations/`: Charts, graphs, and visualizations generated during the analysis.
-- `power_bi/`: Power BI files for further analysis and dashboard creation.
-
-## Data Sources
-
-- UFC Official Website: [https://www.ufc.com/](https://www.ufc.com/)
-- UFC Stats Website : http://ufcstats.com/statistics/fighters
-
-## Contributing
-
-Contributions are welcome! Please follow the [Contributing Guidelines](CONTRIBUTING.md).
-
-
+- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
+- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
